@@ -270,6 +270,12 @@ sys_khello(uint32_t arg[]) {
     return 0;
 }
 
+static uint32_t
+sys_kfree(uint32_t arg[]) {
+    kprintf("free pages:%d\r\n",nr_free_pages());
+    return 0;
+}
+
 static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_exit]              sys_exit,
     [SYS_fork]              sys_fork,
@@ -309,6 +315,7 @@ static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_pipe]              sys_pipe,
     [SYS_mkfifo]            sys_mkfifo,
     [SYS_khello]            sys_khello,
+    [SYS_kfree]             sys_kfree,
 };
 
 #define NUM_SYSCALLS        ((sizeof(syscalls)) / (sizeof(syscalls[0])))
