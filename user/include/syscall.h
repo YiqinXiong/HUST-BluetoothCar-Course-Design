@@ -57,7 +57,7 @@ int sys_getdirentry(int fd, struct dirent *dirent);
 int sys_dup(int fd1, int fd2);
 int sys_pipe(int *fd_store);
 int sys_mkfifo(const char *name, uint32_t open_flags);
-int sys_hello(void);
+int sys_khello(void);
 int sys_mount(const char *source, const char *target,
 	      const char *filesystemtype, const void *data);
 int sys_umount(const char *target);

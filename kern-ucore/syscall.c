@@ -265,8 +265,8 @@ sys_mkfifo(uint32_t arg[]) {
 }
 
 static uint32_t
-sys_hello(uint32_t arg[]) {
-    printf("Kernel: hello world!\r\n");
+sys_khello(uint32_t arg[]) {
+    kprintf("Kernel: hello world!\r\n");
     return 0;
 }
 
@@ -308,6 +308,7 @@ static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_dup]               sys_dup,
     [SYS_pipe]              sys_pipe,
     [SYS_mkfifo]            sys_mkfifo,
+    [SYS_khello]            sys_khello,
 };
 
 #define NUM_SYSCALLS        ((sizeof(syscalls)) / (sizeof(syscalls[0])))
