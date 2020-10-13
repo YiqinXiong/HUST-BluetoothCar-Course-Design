@@ -264,11 +264,11 @@ sys_mkfifo(uint32_t arg[]) {
     return sysfile_mkfifo(name, open_flags);
 }
 
-static uint32_t
-sys_hello(uint32_t arg[]) {
-    printf("Hello,World!\r\n");
-    return 0;
-}
+// static uint32_t
+// sys_hello(uint32_t arg[]) {
+//     printf("Hello,World!\r\n");
+//     return 0;
+// }
 
 static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_exit]              sys_exit,
