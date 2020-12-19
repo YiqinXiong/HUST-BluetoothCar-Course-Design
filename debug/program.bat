@@ -1,1 +1,0 @@
-vivado -mode batch -source program.tcl -nojournal -nolog
